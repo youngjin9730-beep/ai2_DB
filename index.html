@@ -1,0 +1,1881 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>국내 기초 스킨케어 시장 · 듀얼 브랜드 전략</title>
+<style>
+:root {
+  --bg: #f2f5f8;
+  --ink: #172b41;
+  --muted: #536579;
+  --blue: #1979b4;
+  --sky: #74c8ee;
+  --pale: #eaf5fc;
+  --orange: #c45116;
+  --line: #dce5ed;
+  --radius: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, "Pretendard GOV", "Noto Sans KR", Arial, sans-serif;
+}
+h1, h2, h3, p {
+  margin: 0;
+}
+h1 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.35;
+  letter-spacing: -.04em;
+}
+h2 {
+  font-size: 24px;
+  letter-spacing: -.03em;
+}
+h3 {
+  font-size: 18px;
+  line-height: 1.45;
+}
+a {
+  color: #11699f;
+  text-underline-offset: 4px;
+}
+button, input, select {
+  font: inherit;
+}
+button, select, input {
+  border: 1px solid #a6b7c6;
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+}
+button {
+  cursor: pointer;
+  padding: 9px 14px;
+  min-height: 44px;
+  font-weight: 600;
+}
+button:hover {
+  background: var(--pale);
+}
+:focus-visible {
+  outline: 3px solid #d05c1d;
+  outline-offset: 3px;
+}
+button.primary {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+}
+input, select {
+  min-height: 44px;
+  padding: 9px 12px;
+  max-width: 100%;
+}
+input[type=range] {
+  padding: 0;
+  accent-color: var(--blue);
+  width: 100%;
+}
+input[type=number] {
+  width: 100%;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 10px;
+  background: white;
+  padding: 12px;
+  z-index: 10;
+}
+.skip:focus {
+  top: 10px;
+}
+.shell {
+  max-width: 1500px;
+  margin: auto;
+  padding: 30px 32px 50px;
+}
+.mast {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: #276a94;
+  margin-bottom: 8px;
+}
+.sub {
+  color: var(--muted);
+  margin-top: 10px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-right: 6px;
+}
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fffffff5;
+  border-block: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+.nav-inner {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 5px;
+  overflow: auto;
+}
+.nav a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--muted);
+  padding: 16px 13px;
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+}
+.nav a:hover, .nav a[aria-current] {
+  color: #126b9f;
+  border-color: var(--blue);
+  background: #f0f8fd;
+}
+section {
+  margin-top: 32px;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  min-width: 0;
+}
+.span3 { grid-column: span 3; }
+.span4 { grid-column: span 4; }
+.span6 { grid-column: span 6; }
+.span8 { grid-column: span 8; }
+.span12 { grid-column: span 12; }
+.kpi {
+  border-top: 3px solid var(--sky);
+}
+.kpi h3 {
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.value {
+  font-size: 36px;
+  line-height: 1.3;
+  font-weight: 750;
+  letter-spacing: -.045em;
+  font-variant-numeric: tabular-nums;
+  margin: 14px 0 8px;
+}
+.unit {
+  font-size: 16px;
+  margin-left: 5px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.tag {
+  display: inline-block;
+  background: var(--pale);
+  color: #175f89;
+  border-radius: 5px;
+  padding: 3px 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.tag.warm {
+  background: #fff0e5;
+  color: #a54511;
+}
+.insight {
+  background: linear-gradient(135deg, #e2f4ff, #f5fbff);
+  border-color: #bedff1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.insight strong {
+  display: block;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: -.04em;
+  margin: 14px 0;
+}
+.insight p {
+  color: #36556d;
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 15px;
+}
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin: 14px 0;
+  color: var(--muted);
+}
+.key::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--swatch);
+  border-radius: 2px;
+  margin-right: 7px;
+}
+.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+#growth-chart {
+  overflow-x: auto;
+}
+#growth-chart .chart {
+  min-width: 500px;
+}
+.chart text {
+  font: 14px Arial, sans-serif;
+  fill: #536579;
+}
+.foot {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.ring-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 20px 0;
+}
+.ring {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(
+    var(--blue) calc(var(--p)*1%),
+    #e7edf2 0
+  );
+}
+.ring > span {
+  width: 86px;
+  height: 86px;
+  background: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+.ring-wrap p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.bars {
+  display: grid;
+  gap: 15px;
+  margin-top: 18px;
+}
+.bar-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+}
+.track {
+  height: 9px;
+  background: #edf2f7;
+  border-radius: 10px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 10px;
+}
+.orange {
+  color: var(--orange);
+}
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+.chips span {
+  background: #edf4f9;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+.table-wrap {
+  overflow: auto;
+  max-height: 470px;
+}
+.table-wrap:focus-visible {
+  outline-offset: -3px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  padding: 13px 14px;
+}
+th {
+  background: #f0f5f9;
+  color: #405b70;
+  white-space: nowrap;
+}
+thead th {
+  position: sticky;
+  top: 0;
+}
+caption {
+  text-align: left;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 10px 0;
+}
+td:first-child {
+  font-weight: 600;
+}
+.channel {
+  border-top: 3px solid var(--blue);
+}
+.channel.orange-border {
+  border-top-color: #e78b4e;
+}
+.channel h3 {
+  font-size: 23px;
+  margin: 10px 0;
+}
+.channel ul {
+  padding-left: 20px;
+  margin: 12px 0;
+}
+.channel li {
+  margin: 8px 0;
+}
+.big-note {
+  background: #fff4e9;
+  border-left: 4px solid #d76b27;
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+.controls label {
+  font-size: 14px;
+  display: grid;
+  gap: 6px;
+}
+.result {
+  background: #eff7fc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+}
+.result .value {
+  margin: 8px 0;
+}
+.result.loss {
+  background: #fff0e7;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.step {
+  border-left: 3px solid #83c9ed;
+  padding-left: 16px;
+}
+.step b {
+  font-size: 18px;
+}
+.step p {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 14px;
+}
+details {
+  margin-top: 16px;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 0;
+}
+.source-tools {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: end;
+  margin: 18px 0;
+}
+.source-tools label {
+  display: grid;
+  gap: 5px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 160px;
+}
+.source-tools button {
+  margin-bottom: 0;
+}
+.source-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+footer {
+  font-size: 13px;
+  color: var(--muted);
+  padding-top: 32px;
+}
+#status {
+  min-height: 24px;
+  font-size: 14px;
+  color: #175f89;
+}
+noscript {
+  display: block;
+  background: #fff0e5;
+  padding: 20px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width:1100px) {
+  .span3 { grid-column: span 6; }
+  .span4 { grid-column: span 6; }
+  .span8 { grid-column: span 12; }
+  .mast { align-items: start; }
+  .actions { min-width: 150px; }
+  .insight { grid-column: span 12; }
+}
+@media (max-width:700px) {
+  .shell { padding: 22px 16px 36px; }
+  .mast { display: block; }
+  .actions { margin-top: 18px; }
+  .nav-inner { padding: 0 8px; }
+  .grid { gap: 14px; }
+  .span3, .span4, .span6, .span8 {
+    grid-column: span 12;
+  }
+  .card { padding: 20px; }
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+  .steps, .controls {
+    grid-template-columns: 1fr;
+  }
+  .value { font-size: 34px; }
+  .ring-wrap { gap: 15px; }
+  .table-wrap table { min-width: 650px; }
+  .source-tools { display: block; }
+  .source-tools > * { margin-top: 12px; }
+  .nav a { padding: 13px 10px; }
+  .eyebrow { font-size: 12px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+}
+@media print {
+  .nav, .actions, button, .source-tools {
+    display: none;
+  }
+  .shell {
+    max-width: none;
+    padding: 0;
+  }
+  .card { break-inside: avoid; }
+  .table-wrap {
+    max-height: none;
+    overflow: visible;
+  }
+  body { background: white; }
+  .span3 { grid-column: span 6; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<svg aria-hidden="true" style="display:none">
+  <symbol id="download" viewBox="0 0 24 24">
+    <path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/>
+  </symbol>
+  <symbol id="info" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 11v6m0-10v.1"/>
+  </symbol>
+</svg>
+
+<header class="shell mast">
+  <div>
+    <p class="eyebrow">CLEAN BEAUTY INTELLIGENCE</p>
+    <h1>국내 기초 스킨케어 시장<br>듀얼 브랜드 전략 대시보드</h1>
+    <p class="sub">시장 흐름에서 채널 실행까지, 데이터로 연결하는 브랜드 전략</p>
+  </div>
+  <div class="actions">
+    <button id="csv" class="primary">
+      <svg class="icon" aria-hidden="true">
+        <use href="#download"/>
+      </svg>
+      지표 CSV
+    </button>
+    <button id="print">인쇄</button>
+  </div>
+</header>
+
+<nav class="nav" aria-label="대시보드 섹션">
+  <div class="nav-inner">
+    <a href="#snapshot" aria-current="location">핵심 요약</a>
+    <a href="#market">시장 구조</a>
+    <a href="#trends">제품·소비자</a>
+    <a href="#channels">유통 채널</a>
+    <a href="#ecosystem">경쟁·제조</a>
+    <a href="#execution">듀얼 브랜드 실행</a>
+    <a href="#regulation">규제·우선순위</a>
+    <a href="#sources">데이터·출처</a>
+  </div>
+</nav>
+
+<main id="main" class="shell">
+  <noscript>
+    차트와 계산 기능을 사용하려면 JavaScript를 활성화해 주세요.
+    본문 전략과 출처 링크는 아래에서 확인할 수 있습니다.
+  </noscript>
+
+  <section id="snapshot" aria-labelledby="snapshot-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">EXECUTIVE SNAPSHOT</p>
+        <h2 id="snapshot-title">시장 핵심 지표</h2>
+      </div>
+      <label>
+        요약 카드 기준연도
+        <select id="year">
+          <option>2024</option>
+          <option>2025</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid" id="kpis" aria-live="polite"></div>
+    <p class="foot">
+      소매판매·생산은 전체 화장품 지표입니다.
+      기초화장품 지표에는 범위를 별도로 표시했습니다.
+      모든 시장 수치는 프로젝트 원자료 기재값입니다.
+    </p>
+  </section>
+
+  <section id="market" aria-labelledby="market-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">MARKET STRUCTURE</p>
+        <h2 id="market-title">내수와 생산, 서로 다른 성장 흐름</h2>
+      </div>
+      <span class="meta">동일 통화·단위 비교 / 조 원</span>
+    </div>
+
+    <div class="grid">
+      <article class="card span8">
+        <div class="card-top">
+          <h3>국내 소매판매액과 생산액</h3>
+          <span class="tag">2021–2025</span>
+        </div>
+        <div class="legend">
+          <span class="key" style="--swatch:#1979b4">소매판매액</span>
+          <span class="key" style="--swatch:#c45116">생산액</span>
+        </div>
+        <div id="market-chart"></div>
+        <p class="foot">
+          2025년 소매판매액은 원자료 미제공.
+          생산액은 억 원에서 조 원으로 환산했습니다.
+          출처 · 원문 1.1–1.2절, 정량데이터 행번호 14–17, 37–41.
+        </p>
+      </article>
+
+      <article class="card span4 insight">
+        <div>
+          <span class="tag">시장 핵심 인사이트</span>
+          <strong>내수의 성숙과<br>수출의 확장이 공존</strong>
+          <p>
+            가격 민감도에 대응하는 진입 상품과 효능·브랜드 경험을
+            제공하는 주력 상품의 역할을 구분합니다.
+          </p>
+        </div>
+        <div>
+          <hr style="border:0;border-top:1px solid #bcd9e9;margin:24px 0">
+          <h3>2028 국내 화장품 시장 전망</h3>
+          <div class="value">150<span class="unit">억 달러</span></div>
+          <p class="meta">
+            원문 KHIDI 인용 · 전망값<br>
+            원화 약 21.6조 원은 원자료 환산값
+          </p>
+        </div>
+      </article>
+
+      <article class="card span4">
+        <h3>기초화장품이 차지하는 비중</h3>
+        <div class="ring-wrap">
+          <div class="ring" style="--p:57.5">
+            <span>57.5%</span>
+          </div>
+          <div>
+            <b>전체 생산액 중 기초</b>
+            <p>2025년 · 10조 3,177억 원<br>행번호 47, 49</p>
+          </div>
+        </div>
+        <div class="ring-wrap">
+          <div class="ring" style="--p:74.7">
+            <span>74.7%</span>
+          </div>
+          <div>
+            <b>전체 수출액 중 기초</b>
+            <p>2025년 · 85.3억 달러<br>행번호 112, 113</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card span4">
+        <h3>화장품 총수출 규모</h3>
+        <p class="meta">억 달러 / 원문 1.1–1.2절</p>
+        <div id="export-chart"></div>
+        <p class="foot">2022년 수치는 원자료 미제공. 행번호 99–102.</p>
+      </article>
+
+      <article class="card span4">
+        <h3>온라인 침투율</h3>
+        <p class="meta">전체 화장품 소매판매액 기준 / %</p>
+        <div id="online-chart"></div>
+        <p class="foot">
+          2022–2025년 · 행번호 137–140.<br>
+          2024년 60.8%는 한국기업평가의 별도 시장 분모를 사용한 수치입니다.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="trends" aria-labelledby="trends-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">PRODUCT & CONSUMER</p>
+        <h2 id="trends-title">다중 효능과 일상 관리로 이동하는 수요</h2>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card span6">
+        <div class="card-top">
+          <h3>기초·기능성 품목별 생산 증감률</h3>
+          <span class="tag">2025 / 전년 대비</span>
+        </div>
+        <div id="growth-chart"></div>
+        <p class="foot">
+          원문 2.1–2.2절 · 행번호 75, 79, 84, 88, 95–97.
+          기초·기능성은 분류가 중첩될 수 있습니다.
+        </p>
+      </article>
+
+      <article class="card span6">
+        <span class="tag warm">슬로우에이징</span>
+        <div class="value">+60.6<span class="unit">%</span></div>
+        <p>올리브영 슬로우에이징 카테고리 매출 증가율</p>
+        <p class="meta">2024년 · 원문 2.1절 / 행번호 151</p>
+        <div class="chips">
+          <span>PDRN</span>
+          <span>펩타이드</span>
+          <span>히알루론산</span>
+          <span>세라마이드</span>
+        </div>
+        <h3>소비자가 고려하는 구매 요인</h3>
+        <div id="needs" class="bars"></div>
+        <p class="foot">
+          원문 4.3절 · 행번호 193–195.
+          조사 기준연도 미명시, 복수 응답 여부 미확인.
+          성분은 원자료의 트렌드 키워드입니다.
+        </p>
+      </article>
+
+      <article class="card span12">
+        <h3>연령별 니즈와 구매 접점</h3>
+        <div class="table-wrap" tabindex="0" role="region"
+             aria-label="연령별 구매 행동 표">
+          <table>
+            <caption>원문 2.3절 및 4.3절의 정성적 요약</caption>
+            <thead>
+              <tr>
+                <th>연령</th>
+                <th>핵심 니즈</th>
+                <th>주요 접점</th>
+                <th>상품·콘텐츠 방향</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10–20대</td>
+                <td>피부 고민 관리·합리적 가격</td>
+                <td>올리브영·다이소·SNS</td>
+                <td>입문 상품과 짧은 사용법 콘텐츠</td>
+              </tr>
+              <tr>
+                <td>30대</td>
+                <td>모공·탄력·슬로우에이징</td>
+                <td>네이버쇼핑·자사몰</td>
+                <td>효능 근거와 루틴형 재구매</td>
+              </tr>
+              <tr>
+                <td>40대</td>
+                <td>기능성·사용 편의</td>
+                <td>쿠팡 등 오픈마켓</td>
+                <td>품질 신뢰와 구매 편의</td>
+              </tr>
+              <tr>
+                <td>50대</td>
+                <td>보습·안티에이징</td>
+                <td>대형마트·TV홈쇼핑</td>
+                <td>설명 중심의 제품 정보</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="foot">
+          상품·콘텐츠 방향은 원자료를 바탕으로 구성한 실행 제안입니다.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="channels" aria-labelledby="channels-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">CHANNEL STRATEGY</p>
+        <h2 id="channels-title">채널마다 명확한 브랜드 역할</h2>
+      </div>
+      <span class="meta">원문 4.1–4.3절 기반 전략 제안</span>
+    </div>
+
+    <div class="grid">
+      <article class="card span4 channel">
+        <span class="tag">메인 브랜드</span>
+        <h3>올리브영</h3>
+        <p>효능과 브랜드 신뢰를 축적하는 주력 채널</p>
+        <ul>
+          <li>대표 성분·효능 중심의 히어로 SKU</li>
+          <li>후기·체험·기획 세트 연결</li>
+          <li>고객별 루틴 확장과 브랜드 인지도 확보</li>
+        </ul>
+        <p class="foot">
+          2025 매출 5조 1,765억 원 · 행번호 146<br>
+          기업 전체 매출, 기초화장품 매출과 범위 상이
+        </p>
+      </article>
+
+      <article class="card span4 channel orange-border">
+        <span class="tag warm">세컨드 브랜드</span>
+        <h3>다이소</h3>
+        <p>가격 접근성과 신규 고객 접점을 확대하는 채널</p>
+        <ul>
+          <li>별도 브랜드·용량·패키지 설계</li>
+          <li>핵심 효능과 단순한 사용 경험</li>
+          <li>개당 공헌이익과 기존 매출 잠식 관리</li>
+        </ul>
+        <p class="foot">
+          자료상 가격 상한 5,000원 · 연도 미명시<br>
+          2025 뷰티 매출 증가율 70% · 행번호 162
+        </p>
+      </article>
+
+      <article class="card span4 channel">
+        <span class="tag">고객 관계·재구매</span>
+        <h3>온라인·D2C</h3>
+        <p>첫 구매 이후의 고객 경험을 이어가는 채널</p>
+        <ul>
+          <li>사용법·피부 고민별 콘텐츠 제공</li>
+          <li>동의 기반 고객 정보와 CRM 운영</li>
+          <li>재구매율·고객획득비·LTV 측정</li>
+        </ul>
+        <p class="foot">
+          자사몰 이용률 10.9% → 15.8%<br>
+          2024 → 2025 · 행번호 179–180
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="ecosystem" aria-labelledby="eco-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">COMPETITIVE ECOSYSTEM</p>
+        <h2 id="eco-title">브랜드 성장과 제조 경쟁력의 연결</h2>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card span6">
+        <h3>주요 브랜드 성장 모델</h3>
+        <div class="table-wrap" tabindex="0" role="region"
+             aria-label="브랜드 모델 표">
+          <table>
+            <caption>원문 3.1절의 사례 요약</caption>
+            <thead>
+              <tr><th>브랜드·기업</th><th>성장 모델</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>메디큐브·APR</td>
+                <td>뷰티 디바이스와 스킨케어 루틴 결합</td>
+              </tr>
+              <tr>
+                <td>토리든</td>
+                <td>히알루론산 기반 대표 라인과 채널 집중</td>
+              </tr>
+              <tr>
+                <td>라운드랩</td>
+                <td>토너·선케어 히어로 제품의 반복 구매</td>
+              </tr>
+              <tr>
+                <td>구다이글로벌</td>
+                <td>인디 브랜드 인수와 글로벌 유통 시너지</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card span6">
+        <h3>주요 ODM 제조사 생산실적</h3>
+        <p class="meta">2025년 / 억 원 / 원문 3.1–3.2절</p>
+        <div id="odm" class="bars"></div>
+        <p class="foot">
+          행번호 294, 296, 298.
+          연결 매출과 범위가 다른 생산액입니다.
+        </p>
+      </article>
+
+      <article class="card span12">
+        <div class="steps">
+          <div class="step">
+            <b>브랜드</b>
+            <p>고객 니즈·성분 콘셉트·채널별 상품 기획</p>
+          </div>
+          <div class="step">
+            <b>ODM 제조</b>
+            <p>처방 개발·품질 관리·안전성 자료 협력</p>
+          </div>
+          <div class="step">
+            <b>유통·고객 관계</b>
+            <p>체험·판매·사용 피드백을 차기 상품에 반영</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="execution" aria-labelledby="exec-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">DUAL-BRAND EXECUTION</p>
+        <h2 id="exec-title">성장 규모와 증분 이익을 함께 평가</h2>
+      </div>
+      <span class="tag warm">입력값 기반 시뮬레이션</span>
+    </div>
+
+    <div class="grid">
+      <article class="card span6">
+        <h3>브랜드·가격 포지셔닝</h3>
+        <div class="table-wrap" tabindex="0" role="region"
+             aria-label="브랜드 전략 비교">
+          <table>
+            <caption>실행 설계안 · 금액은 기획 가정</caption>
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>단일 브랜드</th>
+                <th>듀얼 브랜드</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>운영</td>
+                <td>하나의 브랜드·가격 체계</td>
+                <td>주력·입문 브랜드 역할 구분</td>
+              </tr>
+              <tr>
+                <td>메인</td>
+                <td>채널 간 가격 충돌 점검</td>
+                <td>올리브영 · 효능·경험 중심</td>
+              </tr>
+              <tr>
+                <td>세컨드</td>
+                <td>기존 상품의 채널 확장</td>
+                <td>다이소 · 별도 용량·패키지</td>
+              </tr>
+              <tr>
+                <td>가격 설계</td>
+                <td>동일 용량당 가격 관리</td>
+                <td>
+                  메인은 원가·효능 기준 책정<br>
+                  세컨드는 자료상 5,000원 이하 범위 검토
+                </td>
+              </tr>
+              <tr>
+                <td>관리 부담</td>
+                <td>SKU·메시지 관리 집중</td>
+                <td>브랜드별 운영비·잠식 측정</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="big-note">
+          확대 기준은 증분 이익이 0보다 크고,
+          기존 고객의 이동과 브랜드 경험 저하가
+          허용 범위에 있는 경우로 설정합니다.
+        </div>
+      </article>
+
+      <article class="card span6">
+        <h3>연간 증분 손익 계산</h3>
+        <p class="meta">
+          초깃값은 예시 가정입니다.
+          비용은 동일한 연간·부가세 제외 기준으로 입력하세요.
+        </p>
+        <form id="sim">
+          <div class="controls">
+            <label>
+              세컨드 브랜드 판매량 · 개
+              <input id="volume" type="number" min="0"
+                     max="100000000" step="1" value="100000" required>
+            </label>
+            <label>
+              개당 순매출 · 원
+              <input id="price" type="number" min="0"
+                     max="1000000" step="1" value="3000" required>
+            </label>
+            <label>
+              개당 변동비 · 원
+              <input id="cost" type="number" min="0"
+                     max="1000000" step="1" value="2000" required>
+            </label>
+            <label>
+              연간 추가 고정비 · 만 원
+              <input id="fixed" type="number" min="0"
+                     max="100000000" step="0.01" value="3000" required>
+            </label>
+            <label>
+              잠식 상품의 개당 공헌이익 · 원
+              <input id="mainMargin" type="number" min="0"
+                     max="1000000" step="1" value="5000" required>
+            </label>
+            <label for="rate">
+              기존 판매 잠식률
+              <output id="rate-label" for="rate">10%</output>
+              <input id="rate" type="range" min="0" max="100" value="10">
+            </label>
+          </div>
+          <button type="reset">예시값 초기화</button>
+        </form>
+        <div id="result" class="result" aria-live="polite"></div>
+        <p class="foot">
+          증분 이익 = 판매량 × (순매출 − 변동비) − 추가 고정비 −
+          판매량 × 잠식률 × 기존 개당 공헌이익.
+          잠식률은 신규 판매량 중 기존 판매 1개를 대체하는 비율입니다.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="regulation" aria-labelledby="reg-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">PRIORITIES & RISK</p>
+        <h2 id="reg-title">안전성 대응을 상품 개발에 반영</h2>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card span6">
+        <h3>안전성 평가 단계별 적용</h3>
+        <p class="foot">
+          2026.11.21 확인 · 화장품법 제4조의2 및 부칙
+        </p>
+        <div class="bars">
+          <div>
+            <b>2028년</b>
+            <p>
+              연 생산·수입액 10억 원 이상 또는 공포 후 책임판매업 등록
+              업소 중, 공포 후 기능성 심사·보고 제품을 판매하려는
+              업소에 적용.
+            </p>
+          </div>
+          <div>
+            <b>2030년</b>
+            <p>
+              같은 업소 범위 중 공포 후 최초로 제조·수입하여
+              출시하는 제품을 판매하려는 업소에 적용.
+            </p>
+          </div>
+          <div>
+            <b>2031년</b>
+            <p>
+              그 외 업소와 연 생산·수입액 10억 원 미만 업소에 적용.
+            </p>
+          </div>
+        </div>
+        <div class="big-note">
+          원자료의 ‘2028년 모든 신규 품목 적용’ 문구는 확인된 법령
+          일정과 차이가 있어 위 일정을 반영했습니다.
+          생산·수입액 산정 및 적용례는 부칙을 함께 확인하세요.
+        </div>
+        <p class="foot">
+          <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=289763"
+             target="_blank" rel="noopener">
+            국가법령정보센터 화장품법 · 외부 새 창
+          </a>
+        </p>
+      </article>
+
+      <article class="card span6">
+        <h3>실행 순서와 위험 대응</h3>
+        <div class="bars">
+          <div>
+            <b>상품 설계</b>
+            <p>
+              타깃·채널별 용량·패키지·효능 근거를 정의하고
+              ODM과 안전성 자료 확보 범위를 합의합니다.
+            </p>
+          </div>
+          <div>
+            <b>한정 판매 검증</b>
+            <p>
+              소수 SKU의 공헌이익, 신규 고객 비중,
+              기존 판매 잠식과 재구매를 측정합니다.
+            </p>
+          </div>
+          <div>
+            <b>확대 판단</b>
+            <p>
+              증분 이익과 품질 기준을 충족한 제품부터 확대하고,
+              순이익이 음수면 원가·가격·판매량 가정을 재검토합니다.
+            </p>
+          </div>
+        </div>
+        <p class="foot">
+          공급 중단 위험은 대체 제조·재고 계획,
+          가격 충돌은 용량당 가격 검토,
+          품질 위험은 출하·유해사례 관리 기준으로 대응합니다.
+          실행 순서는 기획 제안입니다.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sources" aria-labelledby="source-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">DATA & SOURCES</p>
+        <h2 id="source-title">지표의 기준과 출처를 확인하세요</h2>
+      </div>
+      <span class="meta">시장 데이터 · 프로젝트 원본 기반</span>
+    </div>
+
+    <article class="card">
+      <p>
+        실적 성격의 원문 수치는 ‘자료 기재값’,
+        미래 시장 규모는 ‘전망’, 계산기 초깃값은 ‘가정’으로 표시했습니다.
+        원자료 수치의 외부 통계 재검증은 수행 범위에 포함하지 않았습니다.
+      </p>
+      <div class="source-links">
+        <a href="https://chatgpt.com/api/library/files/libfile_93817511ba008191aafbfa322f7fcc69/download">
+          원본 정량데이터 XLSX
+        </a>
+        <a href="https://chatgpt.com/api/library/files/libfile_6608a5faa7d88191b4252cf72ac6e764/download">
+          원본 자료조사 MD
+        </a>
+        <a href="https://www.krds.go.kr/html/site/style/style_06.html"
+           target="_blank" rel="noopener">
+          KRDS 아이콘 가이드 · 외부 새 창
+        </a>
+      </div>
+      <p class="foot">
+        원본 링크는 해당 ChatGPT 계정의 파일 접근 권한이 필요합니다.
+        행번호는 XLSX ‘정량데이터’ 시트 A열 식별자이며
+        실제 시트 행은 식별자 + 1입니다.
+      </p>
+
+      <div class="source-tools">
+        <label>
+          지표 검색
+          <input id="query" type="search"
+                 placeholder="예: 생산액, 온라인, 2025">
+        </label>
+        <label>
+          구분
+          <select id="kind">
+            <option value="">전체</option>
+            <option>자료 기재값</option>
+            <option>전망</option>
+          </select>
+        </label>
+        <button id="filtered-csv">검색 결과 CSV</button>
+      </div>
+
+      <p id="count" class="meta" aria-live="polite"></p>
+      <div class="table-wrap" tabindex="0" role="region"
+           aria-label="지표 및 출처 표">
+        <table>
+          <caption>대시보드 지표 · 수치 단위는 원자료 기준</caption>
+          <thead>
+            <tr>
+              <th>지표</th>
+              <th>기준연도</th>
+              <th>값</th>
+              <th>단위</th>
+              <th>구분</th>
+              <th>원문·행번호</th>
+            </tr>
+          </thead>
+          <tbody id="data-body"></tbody>
+        </table>
+      </div>
+
+      <details>
+        <summary>불일치 데이터 및 사용 기준</summary>
+        <div class="table-wrap" tabindex="0" role="region"
+             aria-label="불일치 데이터 표">
+          <table>
+            <caption>
+              정량데이터 분류 15의 원문값·재계산값 병기
+            </caption>
+            <thead>
+              <tr>
+                <th>지표</th>
+                <th>원문값</th>
+                <th>재계산값</th>
+                <th>처리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024 기초 생산 증가율</td>
+                <td>30.2%</td>
+                <td>18.89%</td>
+                <td>대표 성장률 사용 보류</td>
+              </tr>
+              <tr>
+                <td>2024 기초 생산 증가액</td>
+                <td>16,411억 원</td>
+                <td>16,361억 원</td>
+                <td>원자료 확인 필요</td>
+              </tr>
+              <tr>
+                <td>2023 소매판매 증감률</td>
+                <td>−6%</td>
+                <td>−6.4%</td>
+                <td>금액 시계열 우선 표시</td>
+              </tr>
+              <tr>
+                <td>2024 소매판매 증감률</td>
+                <td>−2%</td>
+                <td>−3.13%</td>
+                <td>금액 시계열 우선 표시</td>
+              </tr>
+              <tr>
+                <td>2024 수출 증가율</td>
+                <td>20.3%</td>
+                <td>20.57%</td>
+                <td>금액 시계열 우선 표시</td>
+              </tr>
+              <tr>
+                <td>2025 다이소 전체 매출 증가율</td>
+                <td>14.3%</td>
+                <td>13.38%</td>
+                <td>원자료 확인 필요</td>
+              </tr>
+              <tr>
+                <td>2026 상반기 코스맥스 영업이익 증가율</td>
+                <td>13.05%</td>
+                <td>13.13%</td>
+                <td>세부 수치 확인 필요</td>
+              </tr>
+              <tr>
+                <td>2026 상반기 코스메카 한국법인 매출 증가율</td>
+                <td>74.16%</td>
+                <td>74.17%</td>
+                <td>반올림 차이 확인</td>
+              </tr>
+              <tr>
+                <td>동 법인 영업이익 증가율</td>
+                <td>93%</td>
+                <td>92.69%</td>
+                <td>반올림 차이 확인</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="foot">
+          구다이글로벌 매출 범위값은 단일 확정값으로 통합하지 않았습니다.
+          30대 여성 디바이스 이용률의 기준연도·표현도 원자료 확인 대상입니다.
+          2024년 국내 시장 18.1조 원과 소매판매액 34조 원은
+          산정 범위가 다릅니다.
+          환율·분모가 다른 금액과 비율은 합산하지 않습니다.
+        </p>
+      </details>
+      <div id="status" role="status"></div>
+    </article>
+  </section>
+
+  <footer>
+    Clean Beauty Intelligence · 프로젝트 자료 기반 대시보드<br>
+    KRDS의 타이포그래피·정보 위계·24px 아이콘 설계 원칙을
+    참고했습니다. 아이콘은 직접 작성했습니다.
+  </footer>
+</main>
+
+<script>
+'use strict';
+
+const $ = id => document.getElementById(id);
+
+// 값, 단위와 정량데이터 A열 식별자를 함께 보관합니다.
+const series = {
+  retail: {
+    name: '국내 화장품 소매판매액',
+    years: [2021, 2022, 2023, 2024],
+    values: [35, 37.5, 35.1, 34],
+    unit: '조 원',
+    rows: [14, 15, 16, 17],
+    source: '1.1–1.2절'
+  },
+  production: {
+    name: '전체 화장품 생산액',
+    years: [2021, 2022, 2023, 2024, 2025],
+    values: [166500, 135908, 145102, 175426, 179382],
+    unit: '억 원',
+    rows: [37, 38, 39, 40, 41],
+    source: '1.1–1.2절'
+  },
+  basic: {
+    name: '기초화장용 제품 생산액',
+    years: [2021, 2023, 2024, 2025],
+    values: [101789, 86600, 102961, 103177],
+    unit: '억 원',
+    rows: [44, 45, 46, 47],
+    source: '1.1–1.2절'
+  },
+  exports: {
+    name: '국내 화장품 총수출액',
+    years: [2021, 2023, 2024, 2025],
+    values: [92, 84.6, 102, 114],
+    unit: '억 달러',
+    rows: [99, 100, 101, 102],
+    source: '1.1–1.2절'
+  },
+  online: {
+    name: '소매판매 온라인 침투율',
+    years: [2022, 2023, 2024, 2025],
+    values: [29.6, 33.9, 36.7, 41.4],
+    unit: '%',
+    rows: [137, 138, 139, 140],
+    source: '4.3절'
+  }
+};
+
+const growth = [
+  ['팩·마스크', 28.3, 95],
+  ['손·발 피부연화', 18.2, 96],
+  ['바디케어', 16, 97],
+  ['미백 기능성', 9.7, 88],
+  ['자외선차단', 9.4, 84],
+  ['복합기능성', 8.2, 75],
+  ['단일 주름개선', -21.7, 79]
+];
+
+const needs = [
+  ['가격 대비 가치', 41.5, 193],
+  ['피부 적합성', 40.2, 194],
+  ['성분', 36.7, 195]
+];
+
+const odm = [
+  ['코스맥스', 16104, 294],
+  ['한국콜마', 13012, 296],
+  ['코스메카코리아', 3531, 298]
+];
+
+const extra = [
+  ['국내 화장품 시장 전망', 2028, 150, '억 달러',
+    '전망', '1.1절', 8],
+  ['동 전망 원화 환산', 2028, 21.6, '조 원',
+    '전망', '1.1절', 9],
+  ['기초 생산 비중', 2025, 57.5, '%',
+    '자료 기재값', '1.2절', 49],
+  ['기초 수출액', 2025, 85.3, '억 달러',
+    '자료 기재값', '1.2절', 112],
+  ['기초 수출 비중', 2025, 74.7, '%',
+    '자료 기재값', '1.2절', 113],
+  ['올리브영 슬로우에이징 매출 증가율', 2024, 60.6, '%',
+    '자료 기재값', '2.1절', 151],
+  ['올리브영 전체 매출', 2025, 51765, '억 원',
+    '자료 기재값', '4.1절', 146],
+  ['다이소 뷰티 매출 증가율', 2025, 70, '%',
+    '자료 기재값', '4.2절', 162],
+  ['다이소 화장품 가격 상한', '미명시', 5000, '원',
+    '자료 기재값', '4.2절', 170],
+  ['브랜드 자사몰 이용률', 2024, 10.9, '%',
+    '자료 기재값', '4.3절', 179],
+  ['브랜드 자사몰 이용률', 2025, 15.8, '%',
+    '자료 기재값', '4.3절', 180],
+  ['별도 시장 기준 온라인 비중', 2024, 60.8, '%',
+    '자료 기재값', '4.3절', 143]
+];
+
+const records = Object.values(series).flatMap(
+  s => s.years.map((year, index) => [
+    s.name,
+    year,
+    s.values[index],
+    s.unit,
+    '자료 기재값',
+    s.source,
+    s.rows[index]
+  ])
+);
+
+growth.forEach(row => records.push([
+  row[0] + ' 생산 증감률',
+  2025,
+  row[1],
+  '%',
+  '자료 기재값',
+  '2.1–2.2절',
+  row[2]
+]));
+
+needs.forEach(row => records.push([
+  '구매 고려 요인 · ' + row[0],
+  '미명시',
+  row[1],
+  '%',
+  '자료 기재값',
+  '4.3절',
+  row[2]
+]));
+
+odm.forEach(row => records.push([
+  row[0] + ' 생산액',
+  2025,
+  row[1],
+  '억 원',
+  '자료 기재값',
+  '3.1–3.2절',
+  row[2]
+]));
+
+records.push(...extra);
+
+const format = number => Number(number).toLocaleString(
+  'ko-KR',
+  {maximumFractionDigits: 2}
+);
+
+function valueAt(data, year) {
+  return data.values[data.years.indexOf(Number(year))];
+}
+
+function renderKpis() {
+  const year = $('year').value;
+  const items = [
+    ['retail', '소매판매액 · 전체 화장품', 1, '조 원'],
+    ['production', '생산액 · 전체 화장품', 10000, '조 원'],
+    ['basic', '생산액 · 기초화장품', 10000, '조 원'],
+    ['online', '온라인 침투율 · 전체 화장품', 1, '%']
+  ];
+
+  $('kpis').innerHTML = items.map(
+    ([key, label, divisor, unit]) => {
+      const data = series[key];
+      const value = valueAt(data, year);
+      const index = data.years.indexOf(Number(year));
+
+      return `
+        <article class="card span3 kpi">
+          <h3>${label}</h3>
+          <div class="value">
+            ${value === undefined ? '—' : format(value / divisor)}
+            <span class="unit">
+              ${value === undefined ? '' : unit}
+            </span>
+          </div>
+          <p class="meta">
+            ${year}년 · ${
+              value === undefined
+                ? '원자료 미제공'
+                : `자료 기재값 / 행번호 ${data.rows[index]}`
+            }
+          </p>
+        </article>
+      `;
+    }
+  ).join('');
+}
+
+// 차트의 정확한 수치를 표로도 제공합니다.
+function chartTable(labels, sets, unit) {
+  return `
+    <details>
+      <summary>차트 수치 표 보기</summary>
+      <div class="table-wrap" tabindex="0" role="region"
+           aria-label="차트 수치">
+        <table>
+          <caption>단위 · ${unit}</caption>
+          <thead>
+            <tr>
+              <th>연도</th>
+              ${sets.map(set => `<th>${set.name}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody>
+            ${labels.map((year, index) => `
+              <tr>
+                <td>${year}</td>
+                ${sets.map(set => `
+                  <td>${
+                    set.values[index] == null
+                      ? '미제공'
+                      : format(set.values[index])
+                  }</td>
+                `).join('')}
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  `;
+}
+
+function lineChart(target, labels, sets, max, unit) {
+  const width = Math.max(300, $(target).clientWidth);
+  const height = 270;
+  const left = 46;
+  const right = 24;
+  const top = 24;
+  const bottom = 42;
+  const plotWidth = width - left - right;
+  const plotHeight = height - top - bottom;
+  const x = index => left + index * plotWidth / (labels.length - 1);
+  const y = value => top + plotHeight - value / max * plotHeight;
+  let markup = '';
+
+  for (let index = 0; index <= 4; index++) {
+    const value = max * index / 4;
+
+    markup += `
+      <line x1="${left}" y1="${y(value)}"
+            x2="${width-right}" y2="${y(value)}"
+            stroke="#dce5ed"/>
+      <text x="${left-9}" y="${y(value)+5}"
+            text-anchor="end">${format(value)}</text>
+    `;
+  }
+
+  labels.forEach((label, index) => {
+    markup += `
+      <text x="${x(index)}" y="${height-12}"
+            text-anchor="middle">${label}</text>
+    `;
+  });
+
+  sets.forEach(set => {
+    let path = '';
+    let connected = false;
+
+    set.values.forEach((value, index) => {
+      if (value == null) {
+        connected = false;
+        return;
+      }
+
+      path += `${connected ? 'L' : 'M'}${x(index)},${y(value)} `;
+      connected = true;
+    });
+
+    markup += `
+      <path d="${path}" fill="none"
+            stroke="${set.color}" stroke-width="3"/>
+    `;
+
+    set.values.forEach((value, index) => {
+      if (value != null) {
+        markup += `
+          <circle cx="${x(index)}" cy="${y(value)}" r="4"
+                  fill="white" stroke="${set.color}" stroke-width="2">
+            <title>
+              ${set.name} ${labels[index]}년 ${format(value)} ${unit}
+            </title>
+          </circle>
+        `;
+      }
+    });
+  });
+
+  $(target).innerHTML = `
+    <svg class="chart" role="img"
+         aria-label="${sets.map(set => set.name).join(', ')} 추이. 아래 수치 표 제공"
+         viewBox="0 0 ${width} ${height}">
+      ${markup}
+    </svg>
+  ` + chartTable(labels, sets, unit);
+}
+
+function smallBars(target, rows, max, unit) {
+  $(target).innerHTML = rows.map(([name, value]) => `
+    <div>
+      <div class="bar-head">
+        <span>${name}</span>
+        <b>${format(value)}${unit}</b>
+      </div>
+      <div class="track" aria-hidden="true">
+        <div class="fill" style="width:${value/max*100}%"></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function growthChart() {
+  const zero = 285;
+  const scale = 5.5;
+
+  const bars = growth.map(([name, value], index) => {
+    const y = 28 + index * 35;
+
+    return `
+      <text x="4" y="${y+5}">${name}</text>
+      <rect
+        x="${value < 0 ? zero+value*scale : zero}"
+        y="${y-10}"
+        width="${Math.abs(value)*scale}"
+        height="18"
+        rx="3"
+        fill="${value < 0 ? '#c45116' : '#1979b4'}"/>
+      <text
+        x="${value < 0 ? zero+value*scale-8 : zero+value*scale+8}"
+        y="${y+4}"
+        text-anchor="${value < 0 ? 'end' : 'start'}">
+        ${value > 0 ? '+' : ''}${value}%
+      </text>
+    `;
+  }).join('');
+
+  $('growth-chart').innerHTML = `
+    <svg class="chart" viewBox="0 0 550 275" role="img"
+      aria-label="2025 품목별 생산 증감률.
+      팩 마스크 28.3%, 손발 피부연화 18.2%, 바디케어 16%,
+      미백 9.7%, 자외선차단 9.4%, 복합기능성 8.2%,
+      단일 주름개선 -21.7%">
+      <line x1="${zero}" y1="8" x2="${zero}" y2="260"
+            stroke="#ccd8e3"/>
+      ${bars}
+    </svg>
+  `;
+}
+
+function simulate() {
+  $('rate-label').value = $('rate').value + '%';
+
+  if (!$('sim').checkValidity()) {
+    $('result').textContent =
+      '입력 범위에 맞는 0 이상의 숫자를 입력해 주세요.';
+    return;
+  }
+
+  const volume = Number($('volume').value);
+  const price = Number($('price').value);
+  const cost = Number($('cost').value);
+  const fixed = Number($('fixed').value) * 10000;
+  const mainMargin = Number($('mainMargin').value);
+  const rate = Number($('rate').value) / 100;
+
+  const contribution = volume * (price - cost);
+  const lost = volume * rate * mainMargin;
+  const profit = contribution - fixed - lost;
+
+  const threshold = volume * mainMargin > 0
+    ? (contribution - fixed) / (volume * mainMargin) * 100
+    : null;
+
+  let limit =
+    '기존 공헌이익 또는 판매량이 0이므로 한계 잠식률 산정 제외';
+
+  if (threshold !== null) {
+    limit = threshold < 0
+      ? '잠식률 0%에서도 손실 발생'
+      : threshold > 100
+        ? '잠식률 100%까지 증분 이익 유지'
+        : `손익분기 잠식률 ${format(threshold)}%`;
+  }
+
+  $('result').classList.toggle('loss', profit < 0);
+  $('result').innerHTML = `
+    <p>연간 증분 이익 · 가정</p>
+    <div class="value">
+      ${format(profit/10000)}
+      <span class="unit">만 원</span>
+    </div>
+    <p class="meta">
+      신규 공헌이익 ${format(contribution/10000)}만 원
+      − 고정비 ${format(fixed/10000)}만 원
+      − 잠식 손실 ${format(lost/10000)}만 원
+    </p>
+    <p>${limit}</p>
+  `;
+}
+
+function filtered() {
+  const query = $('query').value.trim().toLowerCase();
+  const kind = $('kind').value;
+
+  return records.filter(row =>
+    (!kind || row[4] === kind) &&
+    row.join(' ').toLowerCase().includes(query)
+  );
+}
+
+function renderTable() {
+  const rows = filtered();
+  $('count').textContent =
+    `전체 ${records.length}개 중 ${rows.length}개 표시`;
+
+  const body = $('data-body');
+  body.replaceChildren();
+
+  if (!rows.length) {
+    const tr = body.insertRow();
+    const td = tr.insertCell();
+    td.colSpan = 6;
+    td.textContent = '검색 결과가 없습니다.';
+    return;
+  }
+
+  rows.forEach(row => {
+    const tr = body.insertRow();
+
+    [
+      row[0],
+      row[1],
+      format(row[2]),
+      row[3],
+      row[4],
+      `원문 ${row[5]} / ${row[6]}`
+    ].forEach(value => {
+      tr.insertCell().textContent = value;
+    });
+  });
+}
+
+function exportCsv(rows) {
+  const header = [
+    '지표',
+    '기준연도',
+    '값',
+    '단위',
+    '구분',
+    '원문 위치',
+    '정량데이터 행번호'
+  ];
+
+  const quote = value =>
+    '"' + String(value).replaceAll('"', '""') + '"';
+
+  const csv = '\uFEFF' + [header, ...rows]
+    .map(row => row.map(quote).join(','))
+    .join('\r\n');
+
+  const url = URL.createObjectURL(
+    new Blob([csv], {type:'text/csv;charset=utf-8'})
+  );
+
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'skincare-indicators.csv';
+  document.body.append(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  $('status').textContent =
+    rows.length + '개 지표의 CSV를 생성했습니다.';
+}
+
+function renderCharts() {
+  lineChart(
+    'market-chart',
+    [2021, 2022, 2023, 2024, 2025],
+    [
+      {
+        name: '소매판매액',
+        values: [...series.retail.values, null],
+        color: '#1979b4'
+      },
+      {
+        name: '생산액',
+        values: series.production.values.map(value => value/10000),
+        color: '#c45116'
+      }
+    ],
+    40,
+    '조 원'
+  );
+
+  lineChart(
+    'export-chart',
+    [2021, 2022, 2023, 2024, 2025],
+    [
+      {
+        name: '화장품 총수출',
+        values: [92, null, 84.6, 102, 114],
+        color: '#1979b4'
+      }
+    ],
+    120,
+    '억 달러'
+  );
+
+  lineChart(
+    'online-chart',
+    series.online.years,
+    [
+      {
+        name: '온라인 침투율',
+        values: series.online.values,
+        color: '#1979b4'
+      }
+    ],
+    50,
+    '%'
+  );
+}
+
+renderKpis();
+growthChart();
+renderCharts();
+smallBars('needs', needs, 100, '%');
+smallBars('odm', odm, 18000, '억 원');
+simulate();
+renderTable();
+
+window.addEventListener('resize', renderCharts);
+$('year').addEventListener('change', renderKpis);
+$('sim').addEventListener('input', simulate);
+$('sim').addEventListener('reset', () => setTimeout(simulate, 0));
+$('query').addEventListener('input', renderTable);
+$('kind').addEventListener('change', renderTable);
+$('csv').addEventListener('click', () => exportCsv(records));
+$('filtered-csv').addEventListener('click', () => exportCsv(filtered()));
+$('print').addEventListener('click', () => window.print());
+
+const links = [...document.querySelectorAll('.nav a')];
+
+function updateNavigation() {
+  const sections = [...document.querySelectorAll('main section')];
+  const current = sections
+    .filter(section => section.getBoundingClientRect().top <= 140)
+    .at(-1) || sections[0];
+
+  links.forEach(link => {
+    if (link.hash === '#' + current.id) {
+      link.setAttribute('aria-current', 'location');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
+window.addEventListener('scroll', updateNavigation, {passive: true});
+updateNavigation();
+</script>
+</body>
+</html>
